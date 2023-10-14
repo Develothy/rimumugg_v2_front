@@ -5,6 +5,10 @@ export default {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter()
+		prerender: {
+			onError: 'continue',
+			entries: ['*'], // Include all routes for prerendering
+		},
+		adapter: adapter(),
 	}
 };

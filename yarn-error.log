@@ -1,0 +1,70 @@
+Arguments: 
+  /opt/homebrew/Cellar/node/20.5.1/bin/node /opt/homebrew/bin/yarn add --dev sveltekit
+
+PATH: 
+  /Users/rothy/lezhin/google-cloud-sdk/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/curl/bin:/Users/rothy/.jenv/shims:/Users/rothy/.jenv/bin:/usr/local/opt/curl/bin:/Users/rothy/.asdf/shims:/opt/homebrew/opt/asdf/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/rothy/animal/rimumugg_v2_front/node_modules/.bin:/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home:/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.5.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.npmjs.org/sveltekit: Not found
+      at params.callback [as _callback] (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:514:28)
+      at Request.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:514:28)
+      at IncomingMessage.<anonymous> (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:628:28)
+      at IncomingMessage.emit (node:events:526:35)
+      at endReadableNT (node:internal/streams/readable:1376:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+  	"name": "frontend",
+  	"version": "0.0.1",
+  	"scripts": {
+  		"dev": "vite dev",
+  		"build": "vite build",
+  		"preview": "vite preview",
+  		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+  		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+  		"deploy": "aws s3 sync ./public s3://rimumu --profile=rothy"
+  	},
+  	"devDependencies": {
+  		"@fontsource/fira-mono": "^4.5.10",
+  		"@neoconfetti/svelte": "^1.0.0",
+  		"@sveltejs/adapter-auto": "^2.0.0",
+  		"@sveltejs/kit": "^1.23.0",
+  		"@sveltejs/vite-plugin-svelte": "^2.4.6",
+  		"@types/cookie": "^0.5.1",
+  		"svelte": "^4.2.0",
+  		"svelte-check": "^3.4.3",
+  		"tslib": "^2.4.1",
+  		"typescript": "^5.0.0",
+  		"vite": "^4.4.11"
+  	},
+  	"type": "module",
+  	"dependencies": {
+  		"@fortawesome/fontawesome-free": "^6.4.2",
+  		"@popperjs/core": "^2.11.8",
+  		"bootstrap": "^4.5.2",
+  		"chart.js": "^4.4.0",
+  		"jquery": "^3.7.1",
+  		"svelte-routing": "^2.2.0",
+  		"watch": "^1.0.2"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
