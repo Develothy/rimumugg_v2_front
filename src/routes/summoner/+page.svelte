@@ -27,7 +27,7 @@
     // 소환사 정보
     async function fetchInfo() {
         try {
-            const url = `http://rimumu-760221263.ap-northeast-2.elb.amazonaws.com/api/summoner?smn=${encodeURIComponent(smn)}`
+            const url = `http://localhost:8088/api/summoner?smn=${encodeURIComponent(smn)}`
             console.log(url)
             const response = await fetch(url, { mode: 'cors' });
             if (!response.ok) {
@@ -49,7 +49,7 @@
     // Match 정보
     async function fetchMatchWithName() {
         try {
-            const url = `http://rimumu-760221263.ap-northeast-2.elb.amazonaws.com/api/matches?smn=${encodeURIComponent(smn)}`
+            const url = `http://localhost:8088/api/matches?smn=${encodeURIComponent(smn)}`
             console.log(url)
             const response = await fetch(url, { mode: 'cors' });
             if (!response.ok) {

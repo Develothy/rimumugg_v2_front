@@ -1,11 +1,31 @@
 <script lang="ts">
+    import {onMount} from "svelte";
+
     export let matches: any;
     export let version: any;
+    let itemData = null;
 
     function smnSearch(smn) {
         const encodedSmn = encodeURIComponent(smn);
         window.location.href = `/summoner?smn=${encodedSmn}`;
     }
+
+    const itemMouseEnterHandle = async () => {
+        itemData = await fetchItem();
+        console.log('item data :', itemData);
+    }
+
+    onMount(() => {
+        // 초기화 옵션
+        itemMouseEnterHandle();
+    })
+
+    async function fetchItem() {
+        let url = 'http://localhost:8088/api/es?num=1001'
+        let response = await fetch(url, {mode: 'cors'});
+        console.log('itemData', response);
+    }
+
 </script>
 
 <div class="main-card2 mb-3 card">
@@ -53,7 +73,12 @@
                             {#if item.itemNum == 0}
                                 <img src="src/lib/images/img/itemNull.png" alt="itemNull" width="20px">
                             {:else }
-                                <img src='https://ddragon.leagueoflegends.com/cdn/{version}/img/item/{item.itemNum}.png' alt="itemImg" width="20px" title={item.itemTooltip} class="tooltip_event">
+                                <div on:mouseenter={itemMouseEnterHandle}>
+                                    <img src='https://ddragon.leagueoflegends.com/cdn/{version}/img/item/{item.itemNum}.png' alt="itemImg" width="20px" title={item.itemTooltip} class="tooltip_event">
+                                    {#if itemData}
+                                        <p>{itemData}</p>
+                                    {/if}
+                                </div>
                             {/if}
                             {#if index === 3}
                                 <br>
