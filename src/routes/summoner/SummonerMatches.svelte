@@ -67,28 +67,29 @@
 
                 </td>
                 <!-- match items -->
-                <td width="15%" class="align-middle" >
-                    {#each match.myGame.itemList as item, index}
-                        <span>
-                            {#if item.itemNum == 0}
-                                <img src="src/lib/images/img/itemNull.png" alt="itemNull" width="20px">
-                            {:else }
-                                <div on:mouseenter={itemMouseEnterHandle}>
-                                    <img src='https://ddragon.leagueoflegends.com/cdn/{version}/img/item/{item.itemNum}.png' alt="itemImg" width="20px" title={item.itemTooltip} class="tooltip_event">
-                                    {#if itemData}
-                                        <p>{itemData}</p>
-                                    {/if}
-                                </div>
-                            {/if}
-                            {#if index === 3}
-                                <br>
-                            {/if}
-                        </span>
-                    {/each}
-                    <img src={`src/lib/images/img/itemNull.png`} alt="itemNull" width="20px" title="보이지 않는 검이 가장 무서운 법...">
+                <td width="15%" class="align-middle align-items-center" >
+                    <div class="row no-gutters">
+                        {#each match.myGame.itemList as item, index}
+                            <div class="col-3 mb-2">
+                                {#if item.itemNum == 0}
+                                    <img src="src/lib/images/img/itemNull.png" alt="itemNull" width="20px">
+                                {:else }
+                                    <div on:mouseenter={itemMouseEnterHandle}>
+                                        <img src='https://ddragon.leagueoflegends.com/cdn/{version}/img/item/{item.itemNum}.png' alt="itemImg" width="20px" title={item.itemTooltip} class="tooltip_event">
+                                        {#if itemData}
+                                            <p>{itemData}</p>
+                                        {/if}
+                                    </div>
+                                {/if}
 
-
+                            </div>
+                        {/each}
+                        <div class="col-3 mb-2">
+                            <img src="src/lib/images/img/itemNull.png" alt="itemNull" width="20px" title="보이지 않는 검이 가장 무서운 법...">
+                        </div>
+                    </div>
                 </td>
+
                 <!-- match participant -->
                 <!-- parti 1 win team  -->
                 <td width="10%" class="align-middle p-0">
