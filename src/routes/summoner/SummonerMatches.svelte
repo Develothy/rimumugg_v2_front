@@ -71,11 +71,11 @@
                     <div class="row no-gutters">
                         {#each match.myGame.itemList as item, index}
                             <div class="col-3 mb-2">
-                                {#if item.itemNum == 0}
+                                {#if item.num == 0}
                                     <img src="src/lib/images/img/itemNull.png" alt="itemNull" width="20px">
                                 {:else }
                                     <div on:mouseenter={itemMouseEnterHandle}>
-                                        <img src='https://ddragon.leagueoflegends.com/cdn/{version}/img/item/{item.itemNum}.png' alt="itemImg" width="20px" title={item.itemTooltip} class="tooltip_event">
+                                        <img src='https://ddragon.leagueoflegends.com/cdn/{version}/img/item/{item.num}.png' alt="itemImg" width="20px" title={item.description} class="tooltip_event">
                                         {#if itemData}
                                             <p>{itemData}</p>
                                         {/if}
